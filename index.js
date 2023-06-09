@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const register = require("./routes/register");
 const login = require("./routes/login");
+const upload = require('./multerConfig')
 const fs = require('fs') 
 const app = express();
 
@@ -19,7 +20,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.use("/api/register", register);
 app.use("/api/login", login);
-app.use("/api/image", image);
+// app.use("/api/image", image);
 
 app.get("/", (req, res) => {
   res.send("Welcome our Hunter Api...");
